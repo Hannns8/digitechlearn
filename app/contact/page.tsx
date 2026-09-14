@@ -1,0 +1,5 @@
+import { Clock, Mail, MessageCircle } from "lucide-react";
+import { Footer, Header, PageHero } from "@/components/site-chrome";
+export const metadata={title:"Hubungi Kami"};
+export default function Contact(){return <><Header/><main><PageHero eyebrow="Customer support" title="Kami siap membantu." text="Punya kendala teknis, akses materi, pembayaran, Zoom, atau akun? Hubungi tim Digitechlearn."/><section className="section-shell contact-grid"><div className="support-card primary-support"><MessageCircle/><small>Respon tercepat</small><h2>WhatsApp Support</h2><p>Ceritakan kendalamu. Tim kami akan membantu menemukan langkah berikutnya.</p><a className="button lime-button" href="https://wa.me/6281234567890" target="_blank" rel="noreferrer">Mulai chat WhatsApp</a></div><div className="support-stack"><article className="support-card"><Clock/><h3>Jam layanan</h3><p>Senin–Jumat<br/><strong>09.00–17.00 WIB</strong></p></article><article className="support-card"><Mail/><h3>Email</h3><p>Untuk kebutuhan kemitraan dan pertanyaan umum.</p><a href="mailto:halo@digitechlearn.id">halo@digitechlearn.id</a></article></div></section></main><Footer/></>}
+

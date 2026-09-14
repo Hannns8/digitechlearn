@@ -1,0 +1,6 @@
+import { Star } from "lucide-react";
+import { Footer, Header, PageHero } from "@/components/site-chrome";
+import { reviews } from "@/lib/site-data";
+export const metadata={title:"Review Peserta"};
+export default function Reviews(){return <><Header/><main><PageHero eyebrow="Review terverifikasi" title="Cerita dari mereka yang sudah menyelesaikan kelas." text="Review hanya dapat diberikan oleh peserta yang telah menyelesaikan pembelajaran."/><section className="section-shell inner-section"><div className="rating-summary"><div><strong>4.9</strong><span>{Array.from({length:5}).map((_,i)=><Star key={i} size={19} fill="currentColor"/>)}</span><small>Rata-rata kepuasan peserta</small></div><p>Pengalaman belajar setiap orang berbeda. Yang sama: mereka mendapatkan ruang untuk bertanya, berlatih, dan menyelesaikan sesuatu yang nyata.</p></div><div className="review-grid review-page">{[...reviews,...reviews].map((r,index)=><article key={r.name+index}><div className="stars">{Array.from({length:r.rating}).map((_,i)=><Star key={i} size={15} fill="currentColor"/>)}</div><blockquote>“{r.quote}”</blockquote><div className="review-person"><span>{r.name.split(" ").map(x=>x[0]).join("")}</span><div><strong>{r.name}</strong><small>{r.role} · {r.course}</small><em>{r.date}</em></div></div></article>)}</div></section></main><Footer/></>}
+

@@ -1,0 +1,10 @@
+import Link from "next/link";
+import { ArrowRight, Check, Clock3, Star, Users } from "lucide-react";
+import { Footer, Header } from "@/components/site-chrome";
+import { methods, type courses } from "@/lib/site-data";
+
+export function CourseDetailPage({ course }: { course: (typeof courses)[number] }) {
+  const Icon = course.icon;
+  return <><Header/><main><section className="course-detail-hero"><div className="section-shell detail-grid"><div><div className={`course-icon ${course.color}`}><Icon size={30}/></div><span className="kicker light">{course.level}</span><h1>{course.title}</h1><p>{course.short} Pelajari fondasi, praktikkan melalui latihan, lalu buktikan kemampuanmu lewat project akhir.</p><div className="detail-meta"><span><Star fill="currentColor"/> {course.rating} rating</span><span><Users/> {course.mentor}</span><span><Clock3/> Akses 1 tahun</span></div></div><aside><small>Mulai dari</small><strong>Rp120.000</strong><span>Video Learning · per kelas</span><Link href="/register" className="button lime-button">Daftar kelas <ArrowRight size={18}/></Link><p>Metode webinar dan 1-on-1 juga tersedia.</p></aside></div></section><section className="section-shell detail-content"><div><span className="kicker">Yang akan kamu pelajari</span><h2>Dari konsep hingga project yang siap ditampilkan.</h2><div className="learn-list">{course.tech.map((x,i)=><article key={x}><span>0{i+1}</span><div><h3>{x}</h3><p>Pelajari konsep inti, pola kerja yang benar, dan penerapannya dalam aplikasi nyata.</p></div></article>)}</div></div><aside className="syllabus"><h3>Project portfolio</h3>{course.projects.map(p=><p key={p}><Check size={17}/>{p}</p>)}<hr/><small>Pengajar</small><strong>{course.mentor}</strong></aside></section><section className="course-methods"><div className="section-shell"><span className="kicker">Pilih cara belajarmu</span><div className="mini-method-grid">{methods.map(m=><article key={m.name}><h3>{m.name}</h3><strong>{m.price}</strong><p>{m.desc}</p><Link href="/pricing">Lihat detail <ArrowRight size={15}/></Link></article>)}</div></div></section></main><Footer/></>;
+}
+
