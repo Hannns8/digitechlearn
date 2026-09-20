@@ -4,9 +4,9 @@ import { Menu, MessageCircle } from "lucide-react";
 export function Header() {
   return <header className="site-header"><nav className="nav-shell" aria-label="Navigasi utama">
     <Link href="/" className="brand" aria-label="Digitechlearn beranda"><span className="brand-mark">D</span><span>digitechlearn</span></Link>
-    <div className="nav-links"><Link href="/about">Tentang</Link><Link href="/courses">Kelas</Link><Link href="/pricing">Metode Belajar</Link><Link href="/mentors">Pengajar</Link><Link href="/reviews">Review</Link><Link href="/faq">FAQ</Link></div>
+    <div className="nav-links"><Link href="/about">Tentang</Link><Link href="/courses">Kelas</Link><Link href="/ai-tutor">AI Tutor</Link><Link href="/pricing">Metode Belajar</Link><Link href="/mentors">Pengajar</Link><Link href="/faq">FAQ</Link></div>
     <div className="nav-actions"><Link href="/login" className="login-link">Masuk</Link><Link href="/register" className="button button-sm">Mulai belajar</Link></div>
-    <details className="mobile-menu"><summary aria-label="Buka menu"><Menu /></summary><div><Link href="/about">Tentang Kami</Link><Link href="/courses">Kelas</Link><Link href="/pricing">Metode Belajar</Link><Link href="/mentors">Pengajar</Link><Link href="/reviews">Review</Link><Link href="/faq">FAQ</Link><Link href="/login">Masuk</Link></div></details>
+    <details className="mobile-menu"><summary aria-label="Buka menu"><Menu /></summary><div><Link href="/about">Tentang Kami</Link><Link href="/courses">Kelas</Link><Link href="/ai-tutor">AI Tutor</Link><Link href="/pricing">Metode Belajar</Link><Link href="/mentors">Pengajar</Link><Link href="/reviews">Review</Link><Link href="/faq">FAQ</Link><Link href="/login">Masuk</Link></div></details>
   </nav></header>;
 }
 
@@ -22,4 +22,3 @@ export function Footer() {
 export function PageHero({ eyebrow, title, text }: { eyebrow: string; title: string; text: string }) {
   return <section className="page-hero section-shell"><span className="kicker">{eyebrow}</span><h1>{title}</h1><p>{text}</p></section>;
 }
-
